@@ -193,7 +193,7 @@ void drawAirPage(const pms5003data& d) {
   snprintf(buf, sizeof(buf), ">2.5:%d  >10 :%d", d.particles_25um, d.particles_100um);
   oledLine(6, buf);
 
-  snprintf(buf, sizeof(buf), "AQI: %-9s [2/2]", aqiLabel(d.pm25_env));
+  snprintf(buf, sizeof(buf), "AQI: %-9s [1/2]", aqiLabel(d.pm25_env));
   oledLine(7, buf);
 
   u8g2.sendBuffer();
@@ -235,7 +235,7 @@ void drawWeatherPage(const WeatherData& wd) {
            unixToTime(wd.sunset).c_str());
   oledLine(6, buf);
 
-  oledLine(7, "Next:AirQ   [1/2]");
+  oledLine(7, "Next:AirQ   [2/2]");
   u8g2.sendBuffer();
 }
 
